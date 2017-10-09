@@ -1,0 +1,179 @@
+$base-font-size: 16;
+
+html {
+  font-size: $base-font-size;
+}
+
+@function pxToRem($px) {
+
+  @return $px/$base-font-size+rem;
+}
+
+body {
+  background-color: #3aaadf;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+}
+
+.vml-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: #fff;
+  margin: pxToRem(50) 0;
+}
+
+.vml-video {
+  width: 100vw;
+  height: 100vw;
+  
+}
+
+.vml-logo--vml {
+  min-width: pxToRem(250);
+}
+
+.vml-logo--kcdc {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: pxToRem(75);
+  margin-right: pxToRem(60);
+
+  &:after {
+    display: inline-block;
+    content: '+';
+    margin-left: pxToRem(60);
+  }
+}
+
+.vml-container {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.vml-container--wide {
+  max-width: 80%;
+}
+
+.vml-container--sm {
+  width: 40%;
+}
+
+.vml-section-title {
+  position: relative;
+  text-transform: uppercase;
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: pxToRem(2);
+    position: absolute;
+    top: calc(50%);
+    left: 0;
+    background-color: #fff;
+    z-index: 0;
+  }
+}
+
+.vml-section-title__inner {
+  background-color: #3aaadf;
+  padding-right: 2rem;
+  z-index: 10;
+  position: relative;
+}
+
+.vml-flex-row {
+  display: flex;
+}
+
+.vml-flex-item {
+  flex: 1;
+}
+
+.vml-speaker__image {
+  max-width: 100%;
+}
+
+.vml-card-row {
+  justify-content: space-between;
+}
+
+.vml-grid-item__author-image {
+  background-position: center;
+  background-size: cover;
+  flex-basis: 15%;
+}
+
+.vml-grid-item__content {
+  flex: 1;
+  padding: 1rem 1rem 1rem 2rem;
+}
+
+.vml-grid-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.vml-grid-item {
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    box-shadow: 0 1px 3px rgba(0,0,0, 0.12), 0 1px 2px rgba(0,0,0, 0.24);
+    margin-bottom: 1rem;
+    flex: 1 calc(20% - 1rem);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+}
+
+.vml-grid-item__title {
+  font-weight: 300;
+}
+
+.vml-grid-item__meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.vml-error {
+  font-weight: 400;
+}
+
+.vml-grid-row .vml-grid-item {
+  margin-bottom: 0;
+}
+
+.vml-speaker__twitter {
+  font-weight: 400;
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+  /* .component-fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.component-slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.component-slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.component-slide-fade-enter, .component-slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.agile__list {
+  //border: 1px solid red!important;
+  width: 100vw;
+  height: 100vh;
+}
