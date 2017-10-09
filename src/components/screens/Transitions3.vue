@@ -65,7 +65,8 @@ import ScrollMagic from 'scrollmagic';
 import 'ScrollMagicGSAP';
 import 'TweenLite';
 import 'ScrollToPlugin';
-import SplitText from '../../../node_modules/gsap/src/minified/plugins/SplitText.min.js';
+//import SplitText from '../../../node_modules/gsap/src/minified/plugins/SplitText.min.js';
+import SplitText from '../../../src/vendor/plugins/SplitText.min.js';
 
 export default {
 
