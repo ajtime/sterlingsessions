@@ -1,7 +1,6 @@
 <template>
    
     <div class="wrapper">
-        <!-- <div id="imagefade" :style="{ backgroundImage: `url('${image}')` }"></div> -->
         <div id="imagefade" :style="{ backgroundImage: `url('${getQuestionImages}')` }"></div>
     </div>
 </template>
@@ -16,15 +15,12 @@
         height: 100%;
     }
     .wrapper {
-        //color:white;
-        //background:black url(https://s.cdpn.io/16327/texture_bg.jpg) no-repeat 50% 0px;
         background: #000;
         overflow:hidden;
         display: flex;
     }
 
     #imagefade {
-        //background:url('../../images/2-Heritage-alexa-25.002.jpg') no-repeat 0 0 transparent;
         width: 100vw;
         height:100vw;
         background-size: contain;
@@ -45,7 +41,6 @@ export default {
 
     created() {
         window.scrollTo(0, 0);
-        //console.log('created', this);
     },
 
     mounted() {
@@ -57,8 +52,8 @@ export default {
         console.log('singleimage getCorrectQuestion test', this.getCorrectQuestion);
         console.log('singleimage getQuestionImages test', this.getQuestionImages);
         console.log('singleimage getCurrentQuestionNumber test', this.getCurrentQuestionNumber);
-        //console.log('singleimage seconds test', this.timePerSlide);
-        // cache element in variable
+
+
         var $img = $('#imagefade');
       
         TweenMax.set($img,{autoAlpha:0});
@@ -85,11 +80,11 @@ export default {
     computed: {
        //
         getQuestionScreenType () {
-            return this.$store.state.channel.screentype;
+            return this.$store.state.screens.screentype;
         },
 
         getQuestionTimeinSeconds () {
-            return this.$store.state.channel.seconds;
+            return this.$store.state.screens.seconds;
         },
 
         alexaTimeMilliseconds () {
@@ -97,11 +92,11 @@ export default {
         },
 
         getCurrentQuestionNumber () {
-            return this.$store.state.channel.question;
+            return this.$store.state.screens.question;
         },
 
         getCorrectQuestion () {
-            return this.$store.state.channel.questionDetails.filter(questionDetail => questionDetail.question === this.getCurrentQuestionNumber);
+            return this.$store.state.screens.questionDetails.filter(questionDetail => questionDetail.question === this.getCurrentQuestionNumber);
         },
         getQuestionImages () {
             return this.getCorrectQuestion[0].images;

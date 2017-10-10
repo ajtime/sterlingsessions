@@ -64,13 +64,13 @@
     
     mounted: function() {
         var self=this;
-        console.log('singleimage getQuestionScreenType: ', this.getQuestionScreenType );
-        console.log('singleimage getQuestionTimeinSeconds', this.getQuestionTimeinSeconds );
-        console.log('singleimage alexaTimeMilliseconds', this.alexaTimeMilliseconds );
-        console.log('singleimage getCorrectQuestion test', this.getCorrectQuestion);
-        console.log('singleimage getQuestionImages test', this.getQuestionImages);
-        console.log('singleimage getCurrentQuestionNumber test', this.getCurrentQuestionNumber);
-        console.log('video loaded, this state', this.$store.state.channel );
+        console.log('defaultvideo getQuestionScreenType: ', this.getQuestionScreenType );
+        console.log('defaultvideo getQuestionTimeinSeconds', this.getQuestionTimeinSeconds );
+        console.log('defaultvideo alexaTimeMilliseconds', this.alexaTimeMilliseconds );
+        console.log('defaultvideo getCorrectQuestion test', this.getCorrectQuestion);
+        console.log('defaultvideo getQuestionImages test', this.getQuestionImages);
+        console.log('defaultvideo getCurrentQuestionNumber test', this.getCurrentQuestionNumber);
+        console.log('video loaded, this state', this.$store.state.screens );
 
   	    //this.$refs.videoRef.src = this.getvideo;
   	    this.$refs.videoRef.src = this.getQuestionVideo;
@@ -86,11 +86,11 @@
 
     computed: {
         getQuestionScreenType () {
-            return this.$store.state.channel.screentype;
+            return this.$store.state.screens.screentype;
         },
 
         getQuestionTimeinSeconds () {
-            return this.$store.state.channel.seconds;
+            return this.$store.state.screens.seconds;
         },
 
         alexaTimeMilliseconds () {
@@ -98,11 +98,11 @@
         },
 
         getCurrentQuestionNumber () {
-            return this.$store.state.channel.question;
+            return this.$store.state.screens.question;
         },
 
         getCorrectQuestion () {
-            return this.$store.state.channel.questionDetails.filter(questionDetail => questionDetail.question === this.getCurrentQuestionNumber);
+            return this.$store.state.screens.questionDetails.filter(questionDetail => questionDetail.question === this.getCurrentQuestionNumber);
         },
         // getQuestionImages () {
         //     return this.getCorrectQuestion[0].images;

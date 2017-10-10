@@ -28,7 +28,7 @@ const signalrProxy = connection.createHubProxy('VMLSignalRHub');
       $.connection.hub.url = '/signalr';
       $.connection.hub.logging = true;
 
-      connection.start({ withCredentials: false }).then(function (messages) {
+      connection.start({ withCredentials: false, pingInterval: null }).then(function (messages) {
           
       });
     },
@@ -37,6 +37,8 @@ const signalrProxy = connection.createHubProxy('VMLSignalRHub');
       signalrProxy.on('hello', (name, message) => {
         //console.log('hello messsage new in app.vue', message);
         console.log('hello messsage new -', message);
+        //aka the error state right now..
+        
         //this.$router.push({ path: '/slideshow' });
  
       });
@@ -75,7 +77,7 @@ const signalrProxy = connection.createHubProxy('VMLSignalRHub');
         if ( (message.displayType == 'staticImage') || (message.displayType == 'gif') ) {
           console.log('staticImage or gif requested');
           console.log('staticImage message', message);
-          this.$store.dispatch('channel/setUpSlide', message, { root: true });
+          this.$store.dispatch('screens/setUpSlide', message, { root: true });
           setTimeout(function() {
             console.log('timeout');
             self.$router.push({ path: '/singleimage' });
@@ -87,9 +89,9 @@ const signalrProxy = connection.createHubProxy('VMLSignalRHub');
           //we need to send something to store that says the current option or something will be the slideshow route..
           //then make a question spot - and say what it is .. like question 02
           //then kick to the page..
-          //this.$store.commit('channel/setQuestion', message, { root: true })
+          //this.$store.commit('screens/setQuestion', message, { root: true })
           
-          this.$store.dispatch('channel/setUpSlide', message, { root: true });
+          this.$store.dispatch('screens/setUpSlide', message, { root: true });
           
           setTimeout(function() {
             console.log('timeout');
@@ -100,15 +102,39 @@ const signalrProxy = connection.createHubProxy('VMLSignalRHub');
 
         //sends correct
         // What one word would you use to describe the culture at VML?
-        if (message.displayType == 'video') {
-          console.log('video ddetected');
+        //if (message.displayType == 'video') {
+        if ( (message.displayType == 'video') && (message.questionNumber == '2') ) {
+          console.log('video ddetected qyeston 2');
           console.log('video message', message);
-          this.$store.dispatch('channel/setUpVideo', message, { root: true });
+          this.$store.dispatch('screens/setUpVideo', message, { root: true });
+          // //defaultvideo
+          setTimeout(function() {
+            console.log('timeout');
+            self.$router.push({ path: '/imagevideo' });
+          }, 700);
+        }
+
+        if ( (message.displayType == 'video') && !(message.questionNumber == '2') ) {
+          console.log('video ddetected not question2');
+          console.log('video message', message);
+          this.$store.dispatch('screens/setUpVideo', message, { root: true });
           //defaultvideo
           setTimeout(function() {
             console.log('timeout');
             self.$router.push({ path: '/defaultvideo' });
           }, 700);
+        }
+
+
+        if (message.title == 'Question List') {
+          console.log('Question List detected');
+          console.log('question list message', message);
+          // this.$store.dispatch('screens/setUpVideo', message, { root: true });
+          // //defaultvideo
+          // setTimeout(function() {
+          //   console.log('timeout');
+          //   self.$router.push({ path: '/defaultvideo' });
+          // }, 700);
         }
 
         //todo
