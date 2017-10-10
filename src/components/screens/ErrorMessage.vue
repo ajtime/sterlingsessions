@@ -4,8 +4,12 @@
         
    
         <div id="imagefade"></div>
-        <div id="quote">
-            {{ $store.state.screens.textResponse1 }}
+        <div id="messagecontainer">
+            <p>{{ $store.state.screens.errorQuestionTitle }}</p>
+            <div id="quote">
+                <!-- {{ $store.state.screens.textResponse1 }} -->
+                {{ $store.state.screens.errorQuestionMessage }}
+            </div>
         </div>
 
     </div>
@@ -20,40 +24,48 @@
     html {
         height: 100%;
     }
-    .wrapper {
-        color:white;
-        background:black url(https://s.cdpn.io/16327/texture_bg.jpg) no-repeat 50% 0px;
-        overflow:hidden;
+
+    #messagecontainer {
         display: flex;
+        flex-flow: column;
+        p {
+            font-size: 3em;
+            text-align: center;
+        }
     }
 
+    .wrapper {
+        color:#000;
+        //background:black url(https://s.cdpn.io/16327/texture_bg.jpg) no-repeat 50% 0px;
+        overflow:hidden;
+        //display: flex;
+    }
 
-    
-    #quote{
-    -webkit-transform: translate3d(0, 0, 0);
-    font-size:24px;
-    line-height:36px;
-    color:#dedede;
-    margin:50px auto;
-    width:800px;
-    visibility:hidden;
+    #quote {
+        -webkit-transform: translate3d(0, 0, 0);
+        font-size:4em;
+        //line-height
+        color:#dedede;
+        margin:50px auto;
+        width:800px;
+        visibility:hidden;
     }
 
     #quote div{
-    -webkit-font-smoothing: antialiased;
+        -webkit-font-smoothing: antialiased;
         -moz-font-smoothing:antialiased;
     }
 
     #imagefade {
-        background:url('../../images/2-Heritage-alexa-25.002.jpg') no-repeat 0 0 transparent;
+        background:url('../../images/questions/01/1-Heritage-alexa-25.001.jpeg') no-repeat 0 0 transparent;
         width: 100vw;
-        height:100vw;
+        height:100vh;
         background-size: contain;
-        margin: 20px 40px 20px 0;
+        //margin: 20px 40px 20px 0;
         visibility:hidden;
+        position: absolute;
+        opacity: .2 !important;
     }
-
-    
 </style>
 
 <script>
@@ -114,9 +126,9 @@ export default {
             console.log('function called kick back to previous route since animation ended');
   
 
-            setTimeout(function() {
+            /* setTimeout(function() {
                 self.$router.push({ path: '/' });
-            }, 4000);
+            }, 4000); */
             
         }
 
@@ -129,18 +141,18 @@ export default {
 
 
         //randomly change z of each word, map opacity to z depth and rotate quote on y axis
-        for(var i = 0; i < numWords; i++){
+       /*  for(var i = 0; i < numWords; i++){
             var z = randomNumber(-50,50)
             tl.to(mySplitText.words[i], 0.5, {z:z, opacity:rangeToPercent(z, -50, 50)}, "pulse");
         }
         tl.to(quote, 0.5, {rotationY:20}, "pulse");
-
+ */
         //randomly change z of each word, map opacity to z depth and rotate quote on xy axis
-        for(var i = 0; i < numWords; i++){
+       /*  for(var i = 0; i < numWords; i++){
             var z = randomNumber(-100,100)
             tl.to(mySplitText.words[i], 0.5, {z:z, opacity:rangeToPercent(z, -100, 100)}, "pulse2");
         }
-        tl.to(quote, 0.5, {rotationX:-35, rotationY:0}, "pulse2");
+        tl.to(quote, 0.5, {rotationX:-35, rotationY:0}, "pulse2"); */
 
 
         //reset the quote to normal position
