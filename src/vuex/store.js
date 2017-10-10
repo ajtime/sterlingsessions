@@ -1,4 +1,4 @@
-import channel from './modules/channel';
+import screens from './modules/screens';
 
 // A Vuex instance is created by combining the state, the actions,
 // and the mutations. Because the actions and mutations are just
@@ -7,7 +7,7 @@ import channel from './modules/channel';
 
 export default {
   modules: {
-    channel,
+    screens,
   },
   strict: true,
 };
