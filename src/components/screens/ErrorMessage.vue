@@ -126,9 +126,9 @@ export default {
             console.log('function called kick back to previous route since animation ended');
   
 
-            /* setTimeout(function() {
+            setTimeout(function() {
                 self.$router.push({ path: '/' });
-            }, 4000); */
+            }, 4000); 
             
         }
 
