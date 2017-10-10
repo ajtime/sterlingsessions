@@ -271,7 +271,7 @@ const state = {
           
         ],
         video: [
-          require('../../images/questions/09/FavoriteCampaigns-01.mp4')
+          require('../../images/questions/09/FavoriteCampaigns-02.mp4')
         ]
       },
       {
