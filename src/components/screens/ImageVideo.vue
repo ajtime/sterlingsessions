@@ -110,8 +110,8 @@ export default {
                 self.$refs.videoRef.src = self.getQuestionVideo;
                 self.$refs.videoRef.play();
                 //console.log('this.alexaTimeMilliseconds',self.alexaTimeMilliseconds);
-            //}, self.alexaTimeMilliseconds);
-            }, 1600);
+            }, self.alexaTimeMilliseconds);
+            //}, 1600);
             
         }
 
