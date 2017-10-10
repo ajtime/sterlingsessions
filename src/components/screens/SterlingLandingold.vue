@@ -1,7 +1,7 @@
 <template lang="html">
 
     <div class="">
-       <!--  <p>{{ $store.state.channel.textResponse1 }}</p>
+       <!--  <p>{{ $store.state.screens.textResponse1 }}</p>
  -->
        
     
@@ -141,23 +141,23 @@
 
     computed: {
         showMessage () {
-            return this.$store.state.channel.showMessage;
+            return this.$store.state.screens.showMessage;
         },
      
         images () {
-            return this.$store.state.channel.images;
+            return this.$store.state.screens.images;
         },
         show () {
-            return this.$store.state.channel.show;
+            return this.$store.state.screens.show;
         },
         members() {
-            return this.$store.state.channel.members;
+            return this.$store.state.screens.members;
         },
         currentNumber() {
-            return this.$store.state.channel.currentNumber;
+            return this.$store.state.screens.currentNumber;
         },
         timer() {
-            return this.$store.state.channel.timer;
+            return this.$store.state.screens.timer;
         }
         
     },
@@ -172,13 +172,13 @@
         
         showThis: function(value) {
             console.log('showThis called');
-            this.$store.commit('channel/show', null, { root: true })
+            this.$store.commit('screens/show', null, { root: true })
 
         },
 
         hideThis: function(value) {
             console.log('hideThis called');
-            this.$store.commit('channel/hide', null, { root: true })
+            this.$store.commit('screens/hide', null, { root: true })
 
         },
 
@@ -195,7 +195,7 @@
 
         next: function(value) {
             console.log('next called');
-            this.$store.dispatch('channel/increment', null, { root: true })
+            this.$store.dispatch('screens/increment', null, { root: true })
 
         },
 

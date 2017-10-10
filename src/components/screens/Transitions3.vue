@@ -5,7 +5,7 @@
    
         <div id="imagefade"></div>
         <div id="quote">
-            {{ $store.state.channel.textResponse1 }}
+            {{ $store.state.screens.textResponse1 }}
         </div>
 
     </div>

@@ -97,10 +97,10 @@ export default {
  
     //fromhere
     getQuestionScreenType () {
-      return this.$store.state.channel.screentype;
+      return this.$store.state.screens.screentype;
     },
     getQuestionTimeinSeconds () {
-      return this.$store.state.channel.seconds;
+      return this.$store.state.screens.seconds;
     },
 
     timePerSlide() { //convert to milliseconds
@@ -112,12 +112,12 @@ export default {
     },
 
     getCurrentQuestionNumber () {
-      return this.$store.state.channel.question;
+      return this.$store.state.screens.question;
       //family.filter(person => person.age > 18);
     },
     getCorrectQuestion () {
-      //return this.$store.state.channel.questionDetails.filter(questionDetail => questionDetail.question === 1);
-      return this.$store.state.channel.questionDetails.filter(questionDetail => questionDetail.question === this.getCurrentQuestionNumber);
+      //return this.$store.state.screens.questionDetails.filter(questionDetail => questionDetail.question === 1);
+      return this.$store.state.screens.questionDetails.filter(questionDetail => questionDetail.question === this.getCurrentQuestionNumber);
       //family.filter(person => person.age > 18);
     },
     getQuestionImages () {

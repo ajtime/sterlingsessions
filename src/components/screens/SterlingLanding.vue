@@ -109,32 +109,32 @@ export default {
     //console.log('tthis.$store.getters', this.$store.getters);
     //console.log('tthis.$store.topics', this.topics);
 
-    //console.log('slides loaded, this state', this.$store.state.channel );
+    //console.log('slides loaded, this state', this.$store.state.screens );
 
     //var bla = this.seconds * 1000;
-    //this.$store.commit('channel/show', null, { root: true })
-    //channel/userSet
+    //this.$store.commit('screens/show', null, { root: true })
+    //screens/userSet
     //console.log('this.imagesSlideResult', this.imagesSlideResult);
   },
   computed: {
-    users2: () => this.$store.getters['channel/userSet'],
+    users2: () => this.$store.getters['screens/userSet'],
     
     users () {
     // return the getter where module name is 'team' and getter name is 'team'
-      return this.$store.getters['channel/userSet'];
+      return this.$store.getters['screens/userSet'];
     },
 
     topics () {
-      return this.$store.state.channel.topics
+      return this.$store.state.screens.topics
     },
 
-    //topics: () => this.$store.state.channel.topics,
+    //topics: () => this.$store.state.screens.topics,
     images () {
-      return this.$store.state.channel.images
+      return this.$store.state.screens.images
     },
 
     imagesSlideResult () {
-      return this.$store.state.channel.imageQuestions['03'];
+      return this.$store.state.screens.imageQuestions['03'];
     },
 
     numberofslides () {
@@ -150,7 +150,7 @@ export default {
       //return require.context('../../images/questions/07' + /^\d+.jpeg$/);
     },
     seconds() {
-      return this.$store.state.channel.testTimeSeconds * 1000 / this.numberofslides;
+      return this.$store.state.screens.testTimeSeconds * 1000 / this.numberofslides;
     }
   },
   methods: {
