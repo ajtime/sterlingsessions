@@ -155,6 +155,14 @@ const signalrProxy = connection.createHubProxy('VMLSignalRHub');
         
       });
 
+      signalrProxy.on('killswitch', (name, message) => {
+        console.log('killswitch new messsage', message);
+        this.$router.push({ path: '/' });
+
+        
+        
+      });
+
       //questionList
       signalrProxy.on('questionList', (name, message) => {
         console.log('questionList new messsage', message);
