@@ -40,6 +40,16 @@ const mutations = {
   },
 
 
+  //setting up error view
+  setErrorQuestionTitle  (state, value) {
+    //console.log('setQuestion state value', state, value);
+    state.errorQuestionTitle = value;
+  },
+
+  setErrorQuestionMessage (state, value) {
+    state.errorQuestionMessage = value;
+  },
+
 
 };
 
@@ -57,6 +67,15 @@ const actions = {
   decrement ({ commit }) {
     //console.log('updatetext in actions value:', value);
     commit('decrement')
+  },
+  setUpError ({ commit }, value) {
+    console.log('setUpError action in state called payload', value);
+    
+    //console.log('value.questionNumber', value.questionNumber);
+    //console.log('typeof', typeof value.questionNumber);
+
+    commit('setErrorQuestionTitle', value.title);
+    commit('setErrorQuestionMessage', value.body);
   },
 
   setUpSlide ({ commit }, value) {
@@ -120,6 +139,8 @@ const state = {
     speaker: false,
     channelHeaders: [],
     channels: [],
+    errorQuestionTitle: 'You can say:',
+    errorQuestionMessage: 'Alexa, ask VML to tell me a random fact.</p>Alexa, ask VML to show me the list of questions.',
     testImage2: require('../../images/2-Heritage-alexa-25.002.jpg'),
     testImage: require('../../images/questions/19/pour.gif'),
     testTimeSeconds: 25,

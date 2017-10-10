@@ -38,7 +38,14 @@ const signalrProxy = connection.createHubProxy('VMLSignalRHub');
         //console.log('hello messsage new in app.vue', message);
         console.log('hello messsage new -', message);
         //aka the error state right now..
-        
+        this.$store.dispatch('screens/setUpError', message, { root: true });
+          
+        setTimeout(function() {
+          console.log('timeout');
+          self.$router.push({ path: '/errormessage' });
+        }, 700);
+
+
         //this.$router.push({ path: '/slideshow' });
  
       });
@@ -67,9 +74,9 @@ const signalrProxy = connection.createHubProxy('VMLSignalRHub');
 
       //all answerdetails
       signalrProxy.on('answerDetail', (name, message) => {
-        console.log('answerDetail name', name);
-        console.log('answerDetail  messsage', message);
-        console.log('answerDetail  messsage.displayType', message.displayType);
+        // console.log('answerDetail name', name);
+        // console.log('answerDetail  messsage', message);
+        // console.log('answerDetail  messsage.displayType', message.displayType);
         //this.$router.push({ path: '/Test3' });
 
         //flush out logic TODO
