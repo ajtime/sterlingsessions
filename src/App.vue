@@ -136,6 +136,15 @@ const signalrProxy = connection.createHubProxy('VMLSignalRHub');
         if (message.title == 'Question List') {
           console.log('Question List detected');
           console.log('question list message', message);
+
+          // this.$store.dispatch('screens/setUpQuestionList', message, { root: true });
+          
+          setTimeout(function() {
+            console.log('timeout');
+            self.$router.push({ path: '/questionslist' });
+          }, 700);
+
+
           // this.$store.dispatch('screens/setUpVideo', message, { root: true });
           // //defaultvideo
           // setTimeout(function() {

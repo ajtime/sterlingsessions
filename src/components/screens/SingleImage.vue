@@ -67,7 +67,7 @@ export default {
 
 
             setTimeout(function() {
-                //self.$router.push({ path: '/' });
+                self.$router.push({ path: '/' });
                 console.log('timeout passed');
                 //console.log('this.alexaTimeMilliseconds',self.alexaTimeMilliseconds);
             }, self.alexaTimeMilliseconds);
