@@ -8,10 +8,38 @@
         </div>
         
         <div id="messagecontainer">
-            <p>{{ $store.state.screens.errorQuestionTitle }}</p>
-            <div id="quote">
-                <!-- {{ $store.state.screens.textResponse1 }} -->
-                {{ $store.state.screens.errorQuestionMessage }}
+            <p>{{ $store.state.screens.listOfQuestionsTitle }}</p>
+            <div id="questions">
+                <!-- {{ $store.state.screens.listOfQuestions }} -->
+                <ul>
+                    <li>What did VML originally stand for?</li>
+                    <li>Who was VML’s first client?</li>
+                    <li>Where in the world are VML offices?</li>
+                    <li>How many Cannes awards has VML won?</li>
+                    <li>How many miles do VMLers travel each year?</li>
+                    <li>What is the Spark award?</li>
+
+                    <li>How does the VML Foundation contribute to its local communities?</li>
+                    <li>How many projects have VML employees worked on in the last year?</li>
+                    <li>What are some favorite VML campaigns?</li>
+                    <li>How many animal crackers do VMLers in Kansas City eat?</li>
+                    <li>Is this the best anniversary VML has ever had?</li>
+                    <li>What one word would you use to describe the culture at VML?</li>
+                    <li>Where are the VML founders now?</li>
+                    <li>What was VML's first digital project?</li>
+                    <li>How many emails are sent and received between VMLers in a year?</li>
+                    <li>What is VML’s favorite Kansas City BBQ?</li>
+                    <li>Who is the most famous person to come to a VML office?</li>
+                    <li>Where was the first VML office outside of the United States?</li>
+                    <li>How much beer do VMLers in Kansas City drink?</li>
+                    <li>Show me some of VML's best party moments.</li>
+                    <li>Why is VML headquarters in Kansas City?</li>
+                    <li>Show me the evolution of VML logos.</li>
+                    <li>Where was VML's first office space?</li>
+                    <li>When did VML join WPP?</li>
+                    <li>How has VML lead digital innovation?</li>
+
+                </ul>
             </div>
         </div>
 
@@ -38,8 +66,9 @@
         display: flex;
         flex-flow: column;
         p {
-            font-size: 3em;
+            font-size: 2em;
             text-align: center;
+            margin: 0;
         }
     }
 
@@ -52,17 +81,17 @@
         //display: flex;
     }
 
-    #quote {
+    #questions {
         -webkit-transform: translate3d(0, 0, 0);
-        font-size:4em;
+        font-size:1.6em;
         //line-height
         color:#dedede;
-        margin:50px auto;
-        width:800px;
+        //margin:50px auto;
+        width:100vw;
         visibility:hidden;
     }
 
-    #quote div{
+    #questions div{
         -webkit-font-smoothing: antialiased;
         -moz-font-smoothing:antialiased;
     }
@@ -75,7 +104,7 @@
         //margin: 20px 40px 20px 0;
         visibility:hidden;
         position: absolute;
-        opacity: .2 !important;
+        opacity: .1 !important;
     }
 </style>
 
@@ -107,23 +136,23 @@ export default {
         // GSAP handles the cross browser vendor prefixes
         TweenMax.set($img,{autoAlpha:0});
         // animate CSS autoAlpha to 1
-        TweenMax.to($img,3, {autoAlpha:1});
+        TweenMax.to($img,8, {autoAlpha:1});
 
 
-        var quote = document.getElementById("quote"),
-            mySplitText = new SplitText(quote, {type:"words"}),
+        var questions = document.getElementById("questions"),
+            mySplitText = new SplitText(questions, {type:"words"}),
             //tl = new TimelineMax({delay:0.5, repeat:10, repeatDelay:1}),
             tl = new TimelineMax({
-                delay:0.5, 
+                delay:0.0, 
                 repeat:0, 
                 repeatDelay:1,
                 onComplete: goBackHome
                 }),
             numWords = mySplitText.words.length;
 
-        //prep the quote div for 3D goodness
+        //prep the questions div for 3D goodness
         TweenLite.set(
-            quote, 
+            questions, 
                 {
                     transformPerspective:600, 
                     perspective:300, 
@@ -148,7 +177,7 @@ export default {
         for(var i = 0; i < numWords; i++){
         tl.from(mySplitText.words[i], 1.5, {z:randomNumber(-500,300), opacity:0, rotationY:randomNumber(-40, 40)}, Math.random()*1.5);
         }
-        tl.from(quote, tl.duration(), {rotationY:180, transformOrigin:"50% 75% 200", ease:Power2.easeOut}, 0);
+        tl.from(questions, tl.duration(), {rotationY:180, transformOrigin:"50% 75% 200", ease:Power2.easeOut}, 0);
 
 
         //randomly change z of each word, map opacity to z depth and rotate quote on y axis
@@ -168,12 +197,12 @@ export default {
 
         //reset the quote to normal position
         tl.to(mySplitText.words, 0.5, {z:0, opacity:1}, "reset")
-        tl.to(quote, 0.5, {rotationY:0, rotationX:0}, "reset");
+        tl.to(questions, 0.5, {rotationY:0, rotationX:0}, "reset");
 
 
 
         //TRY THIS FOR SUPER-SLOW-MO
-        tl.timeScale(0.8);
+        tl.timeScale(0.4);
 
         //some helper functions
         function randomNumber(min, max){

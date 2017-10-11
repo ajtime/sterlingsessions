@@ -18,12 +18,14 @@
         background: #000;
         overflow:hidden;
         display: flex;
+        width: 100vw;
+        height: 100vh;
     }
 
     #imagefade {
         width: 100vw;
-        height:100vw;
-        background-size: contain;
+        height:100vh;
+        background-size: cover;
         margin: 0;
         background-repeat: no-repeat;
         visibility:hidden;
@@ -65,7 +67,7 @@ export default {
 
 
             setTimeout(function() {
-                self.$router.push({ path: '/' });
+                //self.$router.push({ path: '/' });
                 console.log('timeout passed');
                 //console.log('this.alexaTimeMilliseconds',self.alexaTimeMilliseconds);
             }, self.alexaTimeMilliseconds);
