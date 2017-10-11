@@ -9,8 +9,8 @@
         infinite:	boolen	true	Infinite loop sliding
         -->
       <agile :dots="false" :arrows="false" :speed="400"
-        :timing="'ease-out'" :fade="true"
-        :autoplay="true" :autoplaySpeed="this.seconds" :pauseOnHover="false" :infinite="false">
+        :timing="'ease-out'" :fade="true" :autoplay="true"
+         :autoplaySpeed="1400" :pauseOnHover="false" :infinite="false">
 
         <div class="slide" v-for="image in images">
             <!-- <div class="slider__image">
@@ -130,7 +130,7 @@ export default {
 
     //topics: () => this.$store.state.screens.topics,
     images () {
-      return this.$store.state.screens.images
+      return this.$store.state.screens.slideshowimages
     },
 
     imagesSlideResult () {

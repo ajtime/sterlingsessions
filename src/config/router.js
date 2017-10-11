@@ -11,6 +11,7 @@ import DefaultVideo from '@/components/screens/DefaultVideo';
 import ImageVideo from '@/components/screens/ImageVideo';
 
 import ErrorMessage from '@/components/screens/ErrorMessage';
+import QuestionsList from '@/components/screens/QuestionsList';
 
 /* eslint-disable import/prefer-default-export */
 export const routes = [
@@ -42,6 +43,10 @@ export const routes = [
   {
     path: '/errormessage',
     component: ErrorMessage,
+  },
+  {
+    path: '/questionslist',
+    component: QuestionsList,
   },
   {
     path: '/Transitions2',
