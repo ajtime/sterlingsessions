@@ -970,14 +970,14 @@ const state = {
       {
         question: 26,
         images: [
-          require('../../images/questions/26/Scan1.jpeg'),
-          require('../../images/questions/26/Scan2.jpeg'),
-          require('../../images/questions/26/Scan3.jpeg'),
-          require('../../images/questions/26/Scan4.jpeg'),
-          require('../../images/questions/26/Scan5.jpeg'),
-          require('../../images/questions/26/Scan6.jpeg'),
-          require('../../images/questions/26/Scan7.jpeg'),
-          require('../../images/questions/26/Scan8.jpeg')
+          require('../../images/questions/26/vml-founders-q.001.jpeg'),
+          require('../../images/questions/26/vml-founders-q.002.jpeg'),
+          require('../../images/questions/26/vml-founders-q.003.jpeg'),
+          require('../../images/questions/26/vml-founders-q.004.jpeg'),
+          require('../../images/questions/26/vml-founders-q.005.jpeg'),
+          require('../../images/questions/26/vml-founders-q.006.jpeg'),
+          require('../../images/questions/26/vml-founders-q.007.jpeg'),
+          require('../../images/questions/26/vml-founders-q.008.jpeg')
         ],
         video: [
           
