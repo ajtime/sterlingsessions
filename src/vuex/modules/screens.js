@@ -269,31 +269,10 @@ const state = {
           "questionNumber": 25
         }
       ],
-    // testImage2: require('../../images/2-Heritage-alexa-25.002.jpg'),
-    // testImage: require('../../images/questions/19/pour.gif'),
+
     testTimeSeconds: 25,
     //testVideo: require('../../videos/vmlsizzle1.mp4'),
-    images: [
-      require('../../images/questions/01/1-Heritage-alexa-25.001.jpeg'),
-      require('../../images/questions/03/3-Heritage-alexa-25.003.jpeg'),
-      require('../../images/questions/07/Heritage-alexa-25.014.jpeg'),
-      require('../../images/questions/07/Heritage-alexa-25.015.jpeg'),
-      require('../../images/questions/07/Heritage-alexa-25.016.jpeg'),
-      require('../../images/questions/11/Heritage-alexa-25.032.jpeg'),
-      require('../../images/questions/11/Heritage-alexa-25.033.jpeg'),
-      require('../../images/questions/11/Heritage-alexa-25.034.jpeg'),
-      require('../../images/questions/11/Heritage-alexa-25.035.jpeg'),
-      require('../../images/questions/11/Heritage-alexa-25.036.jpeg'),
-      require('../../images/questions/20/Heritage-alexa-25.051.jpeg'),
-      require('../../images/questions/20/Heritage-alexa-25.052.jpeg'),
-      require('../../images/questions/20/Heritage-alexa-25.053.jpeg'),
-      require('../../images/questions/20/Heritage-alexa-25.054.jpeg'),
-      require('../../images/questions/20/Heritage-alexa-25.055.jpeg'),
-      require('../../images/questions/20/Heritage-alexa-25.056.jpeg'),
-      require('../../images/questions/20/Heritage-alexa-25.057.jpeg'),
-      require('../../images/questions/20/Heritage-alexa-25.058.jpeg'),
-      require('../../images/questions/20/Heritage-alexa-25.059.jpeg'),
-    ],
+    
     slideshowimages: [
         require('../../images/slideshow/one/_MG_0229-103.jpg'),
         require('../../images/slideshow/one/_MG_0818.jpg'),
@@ -804,8 +783,8 @@ const state = {
       },
       {
         question: 6,
+        special: [require('../../images/questions/06/Heritage-alexa-25.006.jpeg')],
         images: [
-          require('../../images/questions/06/Heritage-alexa-25.006.jpeg'),
           require('../../images/questions/06/Heritage-alexa-25.007.jpeg'),
           require('../../images/questions/06/Heritage-alexa-25.008.jpeg'),
           require('../../images/questions/06/Heritage-alexa-25.009.jpeg'),
@@ -820,7 +799,6 @@ const state = {
           
           require('../../images/questions/07/Heritage-alexa-25.014.jpeg'),
           require('../../images/questions/07/Heritage-alexa-25.015.jpeg'),
-          require('../../images/questions/07/Heritage-alexa-25.016.jpeg'),
           require('../../images/questions/07/Heritage-alexa-25.017.jpeg'),
           require('../../images/questions/07/Heritage-alexa-25.018.jpeg'),
           require('../../images/questions/07/Heritage-alexa-25.019.jpeg'),
@@ -843,7 +821,7 @@ const state = {
           
         ],
         video: [
-          require('../../images/questions/09/FavoriteCampaigns-03.mp4')
+          require('../../images/questions/09/VML-campaign-alexa.mp4')
         ]
       },
       {

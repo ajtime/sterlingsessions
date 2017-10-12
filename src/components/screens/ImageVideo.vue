@@ -17,12 +17,14 @@
     background: #000;
     overflow:hidden;
     display: flex;
+    width: 100vw;
+    height: 100vh;
 }
 
 #imagefade {
     width: 100vw;
-    height:100vw;
-    background-size: contain;
+    height:100vh;
+    background-size: cover;
     margin: 0;
     background-repeat: no-repeat;
     visibility:hidden;
@@ -85,14 +87,14 @@ export default {
     
     mounted: function() {
         var self=this;
-        console.log('imagevideo getQuestionScreenType: ', this.getQuestionScreenType );
-        console.log('imagevideo getQuestionTimeinSeconds', this.getQuestionTimeinSeconds );
-        console.log('imagevideo alexaTimeMilliseconds', this.alexaTimeMilliseconds );
-        console.log('imagevideo getCorrectQuestion test', this.getCorrectQuestion);
-        console.log('imagevideo getQuestionImages test', this.getQuestionImages);
-        console.log('imagevideo getQuestionVideo test', this.getQuestionVideo);
-        console.log('imagevideo getCurrentQuestionNumber test', this.getCurrentQuestionNumber);
-        console.log('video loaded, this state', this.$store.state.screens );
+        // console.log('imagevideo getQuestionScreenType: ', this.getQuestionScreenType );
+        // console.log('imagevideo getQuestionTimeinSeconds', this.getQuestionTimeinSeconds );
+        // console.log('imagevideo alexaTimeMilliseconds', this.alexaTimeMilliseconds );
+        // console.log('imagevideo getCorrectQuestion test', this.getCorrectQuestion);
+        // console.log('imagevideo getQuestionImages test', this.getQuestionImages);
+        // console.log('imagevideo getQuestionVideo test', this.getQuestionVideo);
+        // console.log('imagevideo getCurrentQuestionNumber test', this.getCurrentQuestionNumber);
+        // console.log('video loaded, this state', this.$store.state.screens );
 
         var $img = $('#imagefade');
       
@@ -106,9 +108,15 @@ export default {
             setTimeout(function() {
                 //self.$router.push({ path: '/' });
                 TweenMax.set($img,{autoAlpha:0});
-                console.log('timeout passed- play video logic');
+                //console.log('timeout passed- play video logic');
                 self.$refs.videoRef.src = self.getQuestionVideo;
                 self.$refs.videoRef.play();
+
+                self.$refs.videoRef.onended = function(e) {
+                    //console.log('kick back to home screen');
+                    self.$router.push({ path: '/' });
+                };
+
                 //console.log('this.alexaTimeMilliseconds',self.alexaTimeMilliseconds);
             }, self.alexaTimeMilliseconds);
             //}, 1600);

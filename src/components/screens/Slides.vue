@@ -78,16 +78,16 @@ export default {
   },
   mounted() {
     var self=this;
-    console.log('getQuestionScreenType: ', this.getQuestionScreenType );
-    console.log('getQuestionTimeinSeconds', this.getQuestionTimeinSeconds );
-    console.log('getCorrectQuestion test', this.getCorrectQuestion);
-    console.log('getQuestionImages test', this.getQuestionImages);
-    console.log('getCurrentQuestionNumber test', this.getCurrentQuestionNumber);
-    console.log('seconds test', this.timePerSlide);
+    // console.log('getQuestionScreenType: ', this.getQuestionScreenType );
+    // console.log('getQuestionTimeinSeconds', this.getQuestionTimeinSeconds );
+    // console.log('getCorrectQuestion test', this.getCorrectQuestion);
+    // console.log('getQuestionImages test', this.getQuestionImages);
+    // console.log('getCurrentQuestionNumber test', this.getCurrentQuestionNumber);
+    // console.log('seconds test', this.timePerSlide);
 
     setTimeout(function() {
       //self.$router.push({ path: '/' });
-      console.log('timeout passed');
+      //console.log('slides timeout passed');
       self.$router.push({ path: '/' });
     }, this.alexaTimeMilliseconds);
 

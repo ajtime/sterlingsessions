@@ -10,9 +10,10 @@
         -->
       <agile :dots="false" :arrows="false" :speed="400"
         :timing="'ease-out'" :fade="true" :autoplay="true"
-         :autoplaySpeed="1400" :pauseOnHover="false" :infinite="false">
+         :autoplaySpeed="1600" :pauseOnHover="false" :infinite="false">
 
-        <div class="slide" v-for="image in images">
+        <!-- <div class="slide" v-for="image in images"> -->
+        <div class="slide" v-for="image in randomarray">
             <!-- <div class="slider__image">
                 <img :src="image">
             </div> -->
@@ -86,79 +87,75 @@ import Vue from 'vue';
 import VueAgile from 'vue-agile';
 Vue.use(VueAgile);
 
-//var testnum = '07';
-
-//console.log('getImages', getImages);
-
-//var images = require.context('../../images/questions/'+testnum, false,  /^profiles\d+.jpeg$/)
-//var images = require('../../images/questions/'+testnum, false,  /^\d+.jpeg$/);
-
-//var images = require('../../images/questions/07/Heritage-alexa-25.013.jpeg');
-
-//console.log('testdini ', getImages);
-//var getImages = require.context("../../images/questions/07/", false, /jpeg$/);
-//var images = require.context('../../images/questions/07/', false, /\.jpeg$/)
 
 export default {
   
   created() {
-    //console.log('ts', this.users);
+     
+    //this.randomarray();
   },
   mounted() {
-    //console.log('test');
-    //console.log('tthis.$store.getters', this.$store.getters);
-    //console.log('tthis.$store.topics', this.topics);
-
-    //console.log('slides loaded, this state', this.$store.state.screens );
-
-    //var bla = this.seconds * 1000;
-    //this.$store.commit('screens/show', null, { root: true })
-    //screens/userSet
-    //console.log('this.imagesSlideResult', this.imagesSlideResult);
+    //console.log(this.images);
+    //console.log(this.randomarray);
+    //this.shuffle(this.images);
+   
   },
   computed: {
-    users2: () => this.$store.getters['screens/userSet'],
-    
-    users () {
-    // return the getter where module name is 'team' and getter name is 'team'
-      return this.$store.getters['screens/userSet'];
-    },
-
-    topics () {
-      return this.$store.state.screens.topics
-    },
-
-    //topics: () => this.$store.state.screens.topics,
+ 
     images () {
+      //return this.$store.state.screens.slideshowimages
       return this.$store.state.screens.slideshowimages
     },
+   
+    randomarray() {
+      return this.shuffle(this.images);
+      /* function shuffle(arra1) {
+        var ctr = arra1.length, temp, index;
 
-    imagesSlideResult () {
-      return this.$store.state.screens.imageQuestions['03'];
-    },
+        // While there are elements in the array
+        while (ctr > 0) {
+        //  Pick a random index
+            index = Math.floor(Math.random() * ctr);
+        // Decrease ctr by 1
+            ctr--;
+        //  And swap the last element with it
+            temp = arra1[ctr];
+            arra1[ctr] = arra1[index];
+            arra1[index] = temp;
+        }
+        return arra1;
+      } */
+      //console.log('images array',this.images);
+      //var myArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      //console.log(shuffle(this.images));
 
-    numberofslides () {
-      return 5;
-    },
-
-    imagesfrompath () {
-      //return imgUrl;
-      //return require('./images/questions/02/' + this.id + '.jpg')
-      //return require('../../images/questions/07/Heritage-alexa-25.013.jpeg');
-      //return getImages;
-      //return require('../../images/questions/07/' + this.id + '.jpeg');
-      //return require.context('../../images/questions/07' + /^\d+.jpeg$/);
     },
     seconds() {
       return this.$store.state.screens.testTimeSeconds * 1000 / this.numberofslides;
     }
   },
   methods: {
-    
-    /* userTopics(user) { // this could also be done for the whole user collection in the getter we created above.
-      console.log('usertopics called');
-      return user.topics.map(topicId => this.topics[topicId]) 
-    }, */
+  
+    ajtest: function () {
+      //console.log('ajtest');
+    },
+
+    shuffle:  function (arra1) {
+        var ctr = arra1.length, temp, index;
+
+        // While there are elements in the array
+        while (ctr > 0) {
+        //  Pick a random index
+            index = Math.floor(Math.random() * ctr);
+        // Decrease ctr by 1
+            ctr--;
+        //  And swap the last element with it
+            temp = arra1[ctr];
+            arra1[ctr] = arra1[index];
+            arra1[index] = temp;
+        }
+        return arra1;
+      }
 
 
    /*  imgUrl: function (path) {

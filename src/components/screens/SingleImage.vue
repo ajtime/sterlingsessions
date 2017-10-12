@@ -48,12 +48,12 @@ export default {
     mounted() {
 
         var self=this;
-        console.log('singleimage getQuestionScreenType: ', this.getQuestionScreenType );
-        console.log('singleimage getQuestionTimeinSeconds', this.getQuestionTimeinSeconds );
-        console.log('singleimage alexaTimeMilliseconds', this.alexaTimeMilliseconds );
-        console.log('singleimage getCorrectQuestion test', this.getCorrectQuestion);
-        console.log('singleimage getQuestionImages test', this.getQuestionImages);
-        console.log('singleimage getCurrentQuestionNumber test', this.getCurrentQuestionNumber);
+        // console.log('singleimage getQuestionScreenType: ', this.getQuestionScreenType );
+        // console.log('singleimage getQuestionTimeinSeconds', this.getQuestionTimeinSeconds );
+        // console.log('singleimage alexaTimeMilliseconds', this.alexaTimeMilliseconds );
+        // console.log('singleimage getCorrectQuestion test', this.getCorrectQuestion);
+        // console.log('singleimage getQuestionImages test', this.getQuestionImages);
+        // console.log('singleimage getCurrentQuestionNumber test', this.getCurrentQuestionNumber);
 
 
         var $img = $('#imagefade');
@@ -68,7 +68,7 @@ export default {
 
             setTimeout(function() {
                 self.$router.push({ path: '/' });
-                console.log('timeout passed');
+                //console.log('timeout passed');
                 //console.log('this.alexaTimeMilliseconds',self.alexaTimeMilliseconds);
             }, self.alexaTimeMilliseconds);
             

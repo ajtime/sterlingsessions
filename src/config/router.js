@@ -10,6 +10,8 @@ import SingleImage from '@/components/screens/SingleImage';
 import DefaultVideo from '@/components/screens/DefaultVideo';
 import ImageVideo from '@/components/screens/ImageVideo';
 
+import SparkImage from '@/components/screens/SparkImage';
+
 import ErrorMessage from '@/components/screens/ErrorMessage';
 import QuestionsList from '@/components/screens/QuestionsList';
 
@@ -39,6 +41,10 @@ export const routes = [
   {
     path: '/imagevideo',
     component: ImageVideo,
+  },
+  {
+    path: '/sparkimage',
+    component: SparkImage,
   },
   {
     path: '/errormessage',
